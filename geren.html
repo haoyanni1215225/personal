@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" media="screen" href="css/style.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+	.section { 
+		text-align: center; 
+		font: 50px ; 
+		color: #fff;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="section one">
+			<div id="particles-js"></div>
+			<h2 class="first"> 郝 </h2> 
+			<h2 class="second"> 艳 </h2>
+			<h2 class="third"> 妮 </h2>
+			<h3 class="name">Yanni Hao</h3>
+			<h4 class="listen">听， </h4>
+			<h5 class="guy">There's an interesting guy here.</h5>
+			<div class="img-box">
+				<a href="#"><img src="img/musci2.png" alt=""></a>
+				<audio src=""></audio>
+			</div> 	
+		</div>
+		<div class="section two">
+			<div class="tu">
+				<img src="img/yin.jpg" alt="">
+			</div>
+			<div class="mask"></div>
+			<div class="k1"></div>
+			<div class="zi">
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp吾名郝艳妮，全栈工程师之名挣之。沉浮人生之路，机缘巧合窥得编程一角，浅探此中，觉神奇，惊叹人之能非可想象，喜，求知之心遂生。然个中奥妙非一日所能参悟，时被所难，灰霾蒙心。幸良师多多，常解吾惑，深感于怀，吾乃持。学海无涯，身觉其中亦感其中乐，苦中作乐是也，大道难得，道阻且长，勉之，得一道是一道也。
+			</div>
+		</div>
+		<div class="section three">
+			<div class="tu1">
+				<img src="img/19.jpg" alt="">
+			</div>
+			<div class="mask2"></div>
+			<span class="jineng">我的技能展示</span>
+			<div class="k2">
+				<canvas class="canvas1" width="200" height="200"></canvas>
+				<canvas class="canvas2" width="200" height="200"></canvas>
+				<canvas class="canvas3" width="200" height="200"></canvas>
+			</div>
+			<div class="k3">
+				<span>html</span>
+				<span>css</span>
+				<span>js</span>
+			</div>
+		</div>
+		<div class="section four">
+			<div class="tu2">
+				<img src="img/biao.jpg" alt="">
+			</div>
+			<div class="mask1"></div>
+			<span class="xiangmu">我的项目展示</span>
+			<div class="k4">
+				<ul>
+					<li><a href="https://haoyanni1215225.github.io/dazi/js%E5%B0%8F%E6%B8%B8%E6%88%8F%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F.html" target="_blank" id="打字游戏"><img src="img/1.jpg" alt=""><span>打字游戏</span></a></li>
+
+					<li><a href="https://haoyanni1215225.github.io/tm/tianmao.html" target="_blank" id="天猫"><img src="img/13.jpg" alt=""><span>天猫</span></a></li>
+
+					<li><a href="https://haoyanni1215225.github.io/qi/%E4%BA%94%E5%AD%90%E6%A3%8B.html" target="_blank" id="五子棋"><img src="img/14.jpg" alt=""><span>五子棋</span></a></li>
+
+					<li><a href="https://haoyanni1215225.github.io/xm/xiaomi.html" target="_blank" id="小米"><img src="img/7.jpg" alt=""><span>小米</span></a></li>
+
+					<li><a href="https://haoyanni1215225.github.io/yd/yidong.html" target="_blank" id="移动"><img src="img/che.jpg" alt=""><span>移动</span></a></li>
+
+					<li><a href="https://haoyanni1215225.github.io/todo/todo.html" target="_blank" id="todo"><img src="img/ghua.jpg" alt=""><span>todo</span></a></li>
+
+					<li><a href="https://haoyanni1215225.github.io/qiye/qiye.html" target="_blank" id="企业"><img src="img/l.png" alt=""><span>企业</span></a></li>
+
+					<li><a href="" target="_blank"><img src="img/nan.jpg" alt=""></a></li>
+
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</body>
+
+
+<script src="js/jquery1.11.3.js"></script>
+<script src="js/jquery.fullPage.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/geren.js"></script>
+<script>
+	$(".box").fullpage({
+		verticalCentered:true,
+		sectionsColor:["white","white","#000","#1b7e5a","#000"],
+		navigation:true,
+		navigationColor:"blue",
+		navigationTooltips:["我是有趣的","我学习感悟","我技能展示","我项目展示","我谢谢来访"],
+		controlArrowColor:"green",
+		continuousVertical:true,
+		anchors:["p1","p2","p3","p4","p5"],
+		afterLoad:function(onchor,index){
+			if(index===2){
+				$(".k1").addClass('lei');
+			}else if(index===3){
+				circle(huabu1,80,"red");
+				circle(huabu2,77,"blue");
+				circle(huabu3,78,"green");
+			} 
+			 
+			
+		},
+		onleave:function(index){
+			if(index===3){
+				huabu1.clearRect(0, 0, 200, 200);
+				huabu2.clearRect(0, 0, 200, 200);
+				huabu3.clearRect(0, 0, 200, 200);
+			}
+		}
+
+	})
+ 	// setInterval(function(){
+ 	// 	$.fn.fullpage.moveSectionDown();
+ 	// },2000)
+</script>
+</html>
